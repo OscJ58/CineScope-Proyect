@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — CineScope</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html"><span class="brand-icon">◈</span> CineÓbsido</a>
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalog.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">El Crítico</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas móvil -->
+  <div class="offcanvas offcanvas-start offcanvas-dark" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title brand-logo">◈ CineÓbsido</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="d-flex flex-column gap-3 mt-3">
+        <a href="index.html" class="offcanvas-link">Inicio</a>
+        <a href="catalog.html" class="offcanvas-link active">Catálogo</a>
+        <a href="about.html" class="offcanvas-link">El Crítico</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header py-5">
+    <div class="container">
+      <span class="section-label">Todo el archivo</span>
+      <h1 class="page-title">Catálogo</h1>
+      <p class="page-subtitle">Cada cosa que vale la pena — y lo que no.</p>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="catalog-filters py-3 sticky-top" id="filterBar">
+    <div class="container">
+      <div class="d-flex gap-2 flex-wrap align-items-center">
+        <span class="filter-label">Filtrar:</span>
+        <button class="btn filter-btn active" data-filter="all">Todo</button>
+        <button class="btn filter-btn" data-filter="serie">🍿Series</button>
+        <button class="btn filter-btn" data-filter="pelicula">📽Películas</button>
+        <button class="btn filter-btn" data-filter="top">🔥 Top picks</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO GRID -->
+  <section class="catalog-grid py-5">
+    <div class="container">
+      <div class="row g-4" id="catalogItems">
+
+        <!-- ANDOR -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie" data-top="true">
+          <div class="catalog-card theme-andor">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg" alt="Andor" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">9.8</span>
+                <span class="overlay-type">Serie</span>
+                <a href="index.html#reviewAndor" class="btn btn-sm btn-overlay">Leer reseña</a>
+              </div>
+              <span class="top-badge">🔥 #1</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Andor</h3>
+              <p class="card-sub">Disney+ · Sci-Fi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARCANE -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie" data-top="true">
+          <div class="catalog-card theme-arcane">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg" alt="Arcane" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">10</span>
+                <span class="overlay-type">Animación</span>
+                <a href="index.html#reviewArcane" class="btn btn-sm btn-overlay">Leer reseña</a>
+              </div>
+              <span class="top-badge">⭐ Obra Maestra</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Arcane</h3>
+              <p class="card-sub">Netflix · Fantasy</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SINNERS -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="pelicula" data-top="true">
+          <div class="catalog-card theme-sinners">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/oHGbSDHfDfMFgr6er1Vx4nhEJhN.jpg" alt="Sinners" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">9.5</span>
+                <span class="overlay-type">Película</span>
+                <a href="index.html#reviewSinners" class="btn btn-sm btn-overlay">Leer reseña</a>
+              </div>
+              <span class="top-badge">🔥 Top 3</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Sinners</h3>
+              <p class="card-sub">Cines · Terror / Historia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUCCESSION -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie" data-top="true">
+          <div class="catalog-card theme-succession">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/7HW47XbkNQ5fiwQFYGWdw9gs144.jpg" alt="Succession" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">9.7</span>
+                <span class="overlay-type">Serie</span>
+                <a href="index.html#reviewSuccession" class="btn btn-sm btn-overlay">Leer reseña</a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Succession</h3>
+              <p class="card-sub">HBO · Drama</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHERNOBYL -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie" data-top="true">
+          <div class="catalog-card theme-chernobyl">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg" alt="Chernobyl" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">9.6</span>
+                <span class="overlay-type">Miniserie</span>
+                <a href="index.html#reviewChernobyl" class="btn btn-sm btn-overlay">Leer reseña</a>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Chernobyl</h3>
+              <p class="card-sub">HBO · Historia real</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STRANGER THINGS -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie">
+          <div class="catalog-card theme-stranger">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg" alt="Stranger Things" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">8.2</span>
+                <span class="overlay-type">Serie</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Stranger Things</h3>
+              <p class="card-sub">Netflix · Sci-Fi / Terror</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- THE WIRE -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie">
+          <div class="catalog-card theme-wire">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/loRmRzQAdM0MhKHuqXkFXiJxPlJ.jpg" alt="The Wire" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">9.4</span>
+                <span class="overlay-type">Serie</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">The Wire</h3>
+              <p class="card-sub">HBO · Crimen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PEACEMAKER -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie">
+          <div class="catalog-card theme-peacemaker">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/hE3LRZAY84buqmvNTSFzMQr9J0D.jpg" alt="Peacemaker" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">8.8</span>
+                <span class="overlay-type">Serie</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Peacemaker</h3>
+              <p class="card-sub">MAX · Acción / Comedia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- THE OUTSIDER -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="serie">
+          <div class="catalog-card theme-outsider">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/k5IE3qKaFCXnAvbFOfnoZxm6Cis.jpg" alt="The Outsider" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">8.9</span>
+                <span class="overlay-type">Serie</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">The Outsider</h3>
+              <p class="card-sub">HBO · Stephen King</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROYECTO HAIL MARY -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="pelicula" data-top="true">
+          <div class="catalog-card theme-hailmary">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/1YmBmBE3idvOmFxCWDSbBiLCxUU.jpg" alt="Project Hail Mary" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">9.1</span>
+                <span class="overlay-type">Película</span>
+              </div>
+              <span class="top-badge">🔥 Top 3</span>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Proyecto Hail Mary</h3>
+              <p class="card-sub">Cines 2025 · Sci-Fi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- WEAPONS -->
+        <div class="col-6 col-md-4 col-lg-3 catalog-item" data-type="pelicula">
+          <div class="catalog-card theme-weapons">
+            <div class="card-poster-wrap">
+              <img src="https://image.tmdb.org/t/p/w500/xYduFGuch9OwbCOjBJqObijlxFh.jpg" alt="Weapons" class="card-poster">
+              <div class="card-overlay">
+                <span class="overlay-score">8.5</span>
+                <span class="overlay-type">Película</span>
+              </div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Weapons</h3>
+              <p class="card-sub">2024 · Terror / Crimen</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <span class="brand-logo footer-brand">🍿 CineScope</span>
+      <div class="footer-links d-flex gap-4">
+        <a href="index.html">Inicio</a>
+        <a href="catalog.html">Catálogo</a>
+        <a href="about.html">Reseñas</a>
+      </div>
+      <span class="footer-copy text-muted small">Opiniones.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filtros del catálogo
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.catalog-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        items.forEach(item => {
+          if (filter === 'all') {
+            item.style.display = '';
+          } else if (filter === 'top') {
+            item.style.display = item.dataset.top ? '' : 'none';
+          } else {
+            item.style.display = item.dataset.type === filter ? '' : 'none';
+          }
+        });
+      });
+    });
+
+    // Navbar scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineScope — Críticas desde las sombras</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <span class="brand-icon">🍿</span> CineScope
+        <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+      </a>
+
+      <!-- Hamburger → abre Offcanvas en móvil (componente Bootstrap nuevo #1) -->
+      <button class="navbar-toggler border-0" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+              aria-controls="mobileMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links desktop -->
+      <div class="text-bg-primary p-1"  class="collapse navbar-collapse" id="navLinks">
+         
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Reseñas</a></li>
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== OFFCANVAS MENÚ MÓVIL (Componente Bootstrap nuevo #1) ===== -->
+  <div class="offcanvas offcanvas-start offcanvas-dark" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title brand-logo"> 🍿 CineScope</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <nav class="d-flex flex-column gap-3 mt-3">
+        <a href="index.html" class="offcanvas-link active">Inicio</a>
+        <a href="catalog.html" class="offcanvas-link">Catálogo</a>
+        <a href="about.html" class="offcanvas-link">El Crítico</a>
+      </nav>
+      <hr class="border-secondary mt-4">
+      <p class="text-muted small mt-3">Series · Películas · Opiniones</p>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero-section">
+    <div class="hero-noise"></div>
+    <div class="container hero-content">
+      <div class="row align-items-center min-vh-5">
+        <div class="col-lg-7">
+          <span class="hero-eyebrow">Críticas desde las sombras</span>
+          <h1 class="hero-title">Proximos<br><em>estrenos</em><br>🍿📽.</h1>
+          <p class="hero-subtitle">No somos criticos. No PR. Solo opiniones reales sobre lo que realmente importa en pantalla.</p>
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <a href="catalog.html" class="btn btn-obsidian-primary">Ver catálogo</a>
+            <a href="about.html" class="btn btn-obsidian-outline">El crítico</a>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="hero-poster-stack">
+
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://image.tmdb.org/t/p/original/sWitU9IjgFwf6y1OrI0zUaL3GNa.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://image.tmdb.org/t/p/w600_and_h900_face/ceKywESF1WPVlfdYRTrvZbTkSXV.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://image.tmdb.org/t/p/w600_and_h900_face/rQKabpeIewLLNStFr3anEXI0xqu.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>  
+        
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== DESTACADOS ===== -->
+  <section class="section-featured py-5">
+    <div class="container">
+      <div class="section-header mb-5">
+        <span class="section-label">Lo mejor</span>
+        <h2 class="section-title">Reseñas destacadas</h2>
+      </div>
+
+      <!-- ACCORDION con reseñas (Componente Bootstrap nuevo #2) -->
+      <div class="accordion accordion-obsidian" id="reviewsAccordion">
+
+        <!-- SINNERS -->
+        <div class="accordion-item review-card theme-sinners">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#reviewSinners">
+              <div class="review-header-content">
+                <img src="https://image.tmdb.org/t/p/w92/oHGbSDHfDfMFgr6er1Vx4nhEJhN.jpg" class="review-thumb" alt="Sinners">
+                <div class="review-meta">
+                  <span class="review-type">PELÍCULA · 2025</span>
+                  <span class="review-name">Sinners</span>
+                </div>
+                <div class="review-score ms-auto me-3">
+                  <span class="score-circle">9.5</span>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div id="reviewSinners" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+            <div class="accordion-body review-body">
+              <div class="row g-4">
+                <div class="col-md-3">
+                  <img src="https://image.tmdb.org/t/p/w500/oHGbSDHfDfMFgr6er1Vx4nhEJhN.jpg" class="img-fluid rounded-2 poster-full" alt="Sinners">
+                </div>
+                <div class="col-md-9">
+                  <div class="review-tags mb-3">
+                    <span class="tag">Terror</span>
+                    <span class="tag">Acción</span>
+                    <span class="tag">Historia</span>
+                    <span class="tag tag-hot">🔥 TOP 3</span>
+                  </div>
+                  <p class="review-text">Una película de época en los tiempos de Al Capone, con segregación racial como telón de fondo. Dos gemelos que querían un reencuentro, que querían llevar la música — pero esta película de terror y suspenso es, sobre todo, una película <strong>de música, de antepasados, de lo que pasa.</strong></p>
+                  <p class="review-text">El villano irlandés es uno de los más carismáticos que he visto: también subyugado, también roto por el imperio inglés, intentando convencer como el mismísimo diablo. Te convence. Y aun así sabes que está mal. Eso es escribir un buen villano.</p>
+                  <p class="review-text">Los efectos especiales, la historia, la actuación — todo impresionante. Pero la música. <em>La música te transporta literal a lo que se está sintiendo.</em></p>
+                  <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANDOR -->
+        <div class="accordion-item review-card theme-andor">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#reviewAndor">
+              <div class="review-header-content">
+                <img src="https://image.tmdb.org/t/p/w92/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg" class="review-thumb" alt="Andor">
+                <div class="review-meta">
+                  <span class="review-type">SERIE · Disney+</span>
+                  <span class="review-name">Andor</span>
+                </div>
+                <div class="review-score ms-auto me-3">
+                  <span class="score-circle">9.8</span>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div id="reviewAndor" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+            <div class="accordion-body review-body">
+              <div class="row g-4">
+                <div class="col-md-3">
+                  <img src="https://image.tmdb.org/t/p/w500/59SVNwLfoMnZPPB6ukW6dlPxAdI.jpg" class="img-fluid rounded-2 poster-full" alt="Andor">
+                </div>
+                <div class="col-md-9">
+                  <div class="review-tags mb-3">
+                    <span class="tag">Sci-Fi</span>
+                    <span class="tag">Drama</span>
+                    <span class="tag">Star Wars</span>
+                    <span class="tag tag-hot">🔥 TOP 1</span>
+                  </div>
+                  <p class="review-text">Si le das el proyecto correcto a la gente correcta, que ama lo que hace, te dan una obra de arte. Andor es eso. Star Wars generó una cultura pop increíble — pero Andor lo lleva a otro nivel: te conecta con lo que se vive hoy en día.</p>
+                  <p class="review-text"><strong>Un Imperio subyugando a su población. Cometiéndola. Haciéndola cosas que no se deben de hacer.</strong> Y aún así la gente resiste. No necesitas sables de luz para contar una historia increíble, emotiva y que te despierta el corazón rebelde.</p>
+                  <p class="review-text">Personajes entrañables que sabes dónde van a terminar — porque ya viste Rogue One. Y aún así cada segundo duele.</p>
+                  <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ARCANE -->
+        <div class="accordion-item review-card theme-arcane">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#reviewArcane">
+              <div class="review-header-content">
+                <img src="https://image.tmdb.org/t/p/w92/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg" class="review-thumb" alt="Arcane">
+                <div class="review-meta">
+                  <span class="review-type">SERIE ANIMADA · Netflix</span>
+                  <span class="review-name">Arcane</span>
+                </div>
+                <div class="review-score ms-auto me-3">
+                  <span class="score-circle">10</span>
+                  <span class="badge rounded-pill text-bg-secondary">Animación</span>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div id="reviewArcane" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+            <div class="accordion-body review-body">
+              <div class="row g-4">
+                <div class="col-md-3">
+                  <img src="https://image.tmdb.org/t/p/w500/fqldf2t8ztc9aiwn3k6mlX3tvRT.jpg" class="img-fluid rounded-2 poster-full" alt="Arcane">
+                </div>
+                <div class="col-md-9">
+                  <div class="review-tags mb-3">
+                    <span class="tag">Animación</span>
+                    <span class="tag">Fantasy</span>
+                    <span class="tag">League of Legends</span>
+                    <span class="tag tag-hot">⭐ OBRA MAESTRA</span>
+                  </div>
+                  <p class="review-text">Una serie de animación que rompe el paradigma. Te lleva al enojo, a la tristeza, a llorar literal. Basada en el universo de League of Legends — una potencia de eSports — y convertida en algo que va mucho más allá de los videojuegos.</p>
+                  <p class="review-text">Conectas con cada personaje de formas distintas. Algunos te gustan más, a algunos los odias más. Pero todos están escritos con una profundidad que pocas series live-action logran. <strong>Jinx es uno de los mejores personajes de la historia de la animación.</strong> Traumada, lastimada, y con un poder que da giros en la trama que no puedes ni creer.</p>
+                  <p class="review-text">La música. La animación que cambia de estilo en ciertos momentos. El mundo dividido en ricos y pobres. Todo impresionante. Se merece todo.</p>
+                  <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUCCESSION -->
+        <div class="accordion-item review-card theme-succession">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#reviewSuccession">
+              <div class="review-header-content">
+                <img src="https://image.tmdb.org/t/p/w92/7HW47XbkNQ5fiwQFYGWdw9gs144.jpg" class="review-thumb" alt="Succession">
+                <div class="review-meta">
+                  <span class="review-type">SERIE · HBO</span>
+                  <span class="review-name">Succession</span>
+                </div>
+                <div class="review-score ms-auto me-3">
+                  <span class="score-circle">9.7</span>
+                  <span class="badge rounded-pill text-bg-primary">Primary</span>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div id="reviewSuccession" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+            <div class="accordion-body review-body">
+              <div class="row g-4">
+                <div class="col-md-3">
+                  <img src="https://image.tmdb.org/t/p/w500/7HW47XbkNQ5fiwQFYGWdw9gs144.jpg" class="img-fluid rounded-2 poster-full" alt="Succession">
+                </div>
+                <div class="col-md-9">
+                  <div class="review-tags mb-3">
+                    <span class="tag">Drama</span>
+                    <span class="tag">Power</span>
+                    <span class="tag">HBO</span>
+                    <span class="tag tag-hot">📺 MUST WATCH</span>
+                  </div>
+                  <p class="review-text">Un imperio de televisión en Estados Unidos. La familia más rica, dueña de todo, que hasta mueve elecciones. Y aun así — los ves tan naturales. Esa es la magia de Succession: transmite esa riqueza absurda como si fuera lo más normal del mundo.</p>
+                  <p class="review-text">Lo más impresionante es cómo conectas con lo dañados que están todos los hijos. Por cómo los ha tratado su padre. Cómo su padre sabe que son inútiles y lo usa. <strong>Es una lucha de egos disfrazada de lucha de poder.</strong></p>
+                  <p class="review-text">Actuaciones de Oscar. Música impresionante. Escritura perfecta. Vuélvela a ver cuando tengas tiempo libre. Es una obsesión.</p>
+                  <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHERNOBYL -->
+        <div class="accordion-item review-card theme-chernobyl">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#reviewChernobyl">
+              <div class="review-header-content">
+                <img src="https://image.tmdb.org/t/p/w92/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg" class="review-thumb" alt="Chernobyl">
+                <div class="review-meta">
+                  <span class="review-type">MINISERIE · HBO</span>
+                  <span class="review-name">Chernobyl</span>
+                </div>
+                <div class="review-score ms-auto me-3">
+                  <span class="score-circle">9.6</span>
+                </div>
+              </div>
+            </button>
+          </h2>
+          <div id="reviewChernobyl" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+            <div class="accordion-body review-body">
+              <div class="row g-4">
+                <div class="col-md-3">
+                  <img src="https://image.tmdb.org/t/p/w500/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg" class="img-fluid rounded-2 poster-full" alt="Chernobyl">
+                </div>
+                <div class="col-md-9">
+                  <div class="review-tags mb-3">
+                    <span class="tag">Historia real</span>
+                    <span class="tag">Drama</span>
+                    <span class="tag">URSS</span>
+                    <span class="tag tag-hot">🏆 IMPRESCINDIBLE</span>
+                  </div>
+                  <p class="review-text">Inicia desde la explosión del reactor el 26 de abril de 1986. Y desde ahí, te lleva de la mano por todo — la ineptitud, la ambición, el heroísmo. Todo.</p>
+                  <p class="review-text">Construida desde el punto de vista de la comunidad: bomberos, niños, animales, científicos. <strong>Te refleja lo que pasa cuando el ser humano ambiciona sin límites</strong> — tanto en el capitalismo soviético como en cualquier sistema donde alguien quiere llegar más arriba sin importar el costo.</p>
+                  <p class="review-text">Pocos capítulos, sí. Pero bien hechos. El juicio final donde explican la ciencia detrás del desastre es brillante. La historia está ahí para ser recordada. O para volver a cometerse.</p>
+                  <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Peacemaker 2 -->
+         <div class="accordion-item review-card theme-peacemaker">
+            <h2 class="accordion-header">
+              <!-- El target debe ser #reviewPeacemaker -->
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#reviewPeacemaker">
+                <div class="review-header-content">
+                  <img src="https://image.tmdb.org/t/p/w600_and_h900_face/55XTxtvxToTvTbXcPOyVf3RbjkQ.jpg" class="review-thumb" alt="Peacemaker">
+                  <div class="review-meta">
+                    <span class="review-type">Temporada 2 · HBO</span>
+                    <span class="review-name">Peacemaker</span>
+                  </div>
+                  <div class="review-score ms-auto me-3">
+                    <span class="score-circle">9.8</span>
+                  </div>
+                </div>
+              </button>
+            </h2>
+            <!-- El ID debe coincidir exactamente con el target: reviewPeacemaker -->
+            <div id="reviewPeacemaker" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+              <div class="accordion-body review-body">
+                <!-- Contenido de Peacemaker -->
+                 <div class="row g-4">
+                  <div class="col-md-3">
+                    <img src="https://image.tmdb.org/t/p/w600_and_h900_face/55XTxtvxToTvTbXcPOyVf3RbjkQ.jpg" class="img-fluid rounded-2 poster-full" alt="Weapons">
+                  </div>
+                  <div class="col-md-9">
+                    <div class="review-tags mb-3">
+                      <span class="tag">Drama</span>
+                      <span class="tag">Power</span>
+                      <span class="tag">HBO</span>
+                      <span class="tag tag-hot">🏆 Joya</span>
+                    </div>
+                    <p class="review-text">Si hay más de este universo de James Gunn, bienvenido sea.</p>
+                    <p class="review-text">Lo más impresionante es cómo conectas con lo dañados que están todos los hijos. Por cómo los ha tratado su padre. Cómo su padre sabe que son inútiles y lo usa. <strong>Es una lucha de egos disfrazada de lucha de poder.</strong></p>
+                    <p class="review-text">Actuaciones de Oscar. Música impresionante. Escritura perfecta. Vuélvela a ver cuando tengas tiempo libre. Es una obsesión.</p>
+                    <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+
+           <!-- SUCCESSION -->
+        <div class="accordion-item review-card theme-Weapons">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button"
+                      data-bs-toggle="collapse" data-bs-target="#reviewWeapons">
+                <div class="review-header-content">
+                  <img src="https://image.tmdb.org/t/p/w600_and_h900_face/55XTxtvxToTvTbXcPOyVf3RbjkQ.jpg" class="review-thumb" alt="Weapons">
+                  <div class="review-meta">
+                    <span class="review-type">Pelicula · HBO</span>
+                    <span class="review-name">Weapons</span>
+                  </div>
+                  <div class="review-score ms-auto me-3">
+                    <span class="score-circle">9.7</span>
+                  </div>
+                </div>
+              </button>
+            </h2>
+            <div id="reviewWeapons" class="accordion-collapse collapse" data-bs-parent="#reviewsAccordion">
+              <div class="accordion-body review-body">
+                <div class="row g-4">
+                  <div class="col-md-3">
+                    <img src="https://image.tmdb.org/t/p/w600_and_h900_face/55XTxtvxToTvTbXcPOyVf3RbjkQ.jpg" class="img-fluid rounded-2 poster-full" alt="Weapons">
+                  </div>
+                  <div class="col-md-9">
+                    <div class="review-tags mb-3">
+                      <span class="tag">Drama</span>
+                      <span class="tag">Power</span>
+                      <span class="tag">HBO</span>
+                      <span class="tag tag-hot">🏆 Joya</span>
+                    </div>
+                    <p class="review-text">Si hay más de este universo de James Gunn, bienvenido sea.</p>
+                    <p class="review-text">Lo más impresionante es cómo conectas con lo dañados que están todos los hijos. Por cómo los ha tratado su padre. Cómo su padre sabe que son inútiles y lo usa. <strong>Es una lucha de egos disfrazada de lucha de poder.</strong></p>
+                    <p class="review-text">Actuaciones de Oscar. Música impresionante. Escritura perfecta. Vuélvela a ver cuando tengas tiempo libre. Es una obsesión.</p>
+                    <a href="catalog.html" class="btn btn-sm btn-obsidian-primary mt-3">Ver en catálogo →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div><!-- /accordion -->
+
+      <div class="text-center mt-5">
+        <a href="catalog.html" class="btn btn-obsidian-outline btn-lg">Ver todas las reseñas →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRÓXIMOS ESTRENOS ===== -->
+  <section class="section-upcoming py-5">
+    <div class="container">
+      <div class="section-header mb-5">
+        <span class="section-label">En el radar</span>
+        <h2 class="section-title">Próximos estrenos</h2>
+      </div>
+  
+      <!-- Una sola fila bien organizada -->
+      <div class="row g-4">
+        <!-- Tarjeta 1 con botón para Modal -->
+        <div class="col-md-4">
+          <div class="upcoming-card">
+            <div class="upcoming-badge">22 de mayo</div>
+            <div class="upcoming-platform">Cines</div>
+            <h3 class="upcoming-title">The Mandalorian and Grogu</h3>
+            <p class="upcoming-desc">El salto de la serie de Disney+ a la pantalla grande.</p>
+            <!-- Botón para disparar el modal -->
+            <button type="button" class="btn btn-sm btn-obsidian-outline" data-bs-toggle="modal" data-bs-target="#modalMando">
+              Ver boletos
+            </button>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="upcoming-card">
+            <div class="upcoming-badge">31 de julio</div>
+            <div class="upcoming-platform">Cines</div>
+            <h3 class="upcoming-title">Spider-Man: Brand New Day</h3>
+            <p class="upcoming-desc">Peter Parker inicia una nueva etapa sin aliados y con su identidad borrada.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="upcoming-card">
+            <div class="upcoming-badge">19 de junio</div>
+            <div class="upcoming-platform">Cines</div>
+            <h3 class="upcoming-title">Toy Story 5</h3>
+            <p class="upcoming-desc">Pixar explora la relación de los juguetes con la tecnología actual.</p>
+          </div>
+        </div>
+  
+        <!-- Fila de abajo (puedes poner más o dejar que fluyan) -->
+        <div class="col-md-6">
+          <div class="upcoming-card">
+            <div class="upcoming-badge">18 de diciembre</div>
+            <div class="upcoming-platform">Cines</div>
+            <h3 class="upcoming-title">Avengers: Doomsday</h3>
+            <p class="upcoming-desc">El regreso triunfal de Marvel con Robert Downey Jr.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="upcoming-card">
+            <div class="upcoming-badge">18 de diciembre</div>
+            <div class="upcoming-platform">Cines</div>
+            <h3 class="upcoming-title">Dune: Parte 3</h3>
+            <p class="upcoming-desc">La conclusión épica de la trilogía de Denis Villeneuve.</p>
+          </div>
+        </div>
+      </div> <!-- /row -->
+    </div> <!-- /container -->
+  </section>
+
+  <!-- ===== TOAST NOTIFICACIÓN (Componente Bootstrap extra) ===== -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100">
+    <div id="newReviewToast" class="toast align-items-center border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body">
+          <strong>◈ Nueva reseña:</strong> Sinners ya disponible en el catálogo.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer py-4">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <span class="brand-logo footer-brand">🍿 CineScope</span>
+      <div class="footer-links d-flex gap-4">
+        <a href="index.html">Inicio</a>
+        <a href="catalog.html">Catálogo</a>
+        <a href="about.html">Reseñas</a>
+      </div>
+      <span class="footer-copy text-muted small">Opiniones. Sin criticos.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mostrar toast al cargar
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const toast = new bootstrap.Toast(document.getElementById('newReviewToast'), { delay: 5000 });
+        toast.show();
+      }, 1500);
+    });
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
